@@ -1,0 +1,22 @@
+.App {
+  text-align: center;
+}
+.content {
+  background-image: url('./Images/saintMkeal.png');
+  background-size: auto;
+  height: 1000px;
+}
+.main{
+  background-image: url('./Images/Medahane_Alem.jpeg');
+  height: 1000px;
+  background-size: auto;
+  margin: 20px;
+}
+.green-paying-btn {
+  background-color: green;
+  color: white;
+}
+.red-not-paying-btn{
+  background-color: red;
+  color: white;
+}
