@@ -7,7 +7,7 @@ import axios from 'axios';
 const Details = (props) => {
     const navigate = useNavigate()
     const {id} = useParams()
-    //const{allMembers, setAllMembers} = props
+
     const[member, setMember] = useState({})
 
     useEffect(()=>{
@@ -67,22 +67,9 @@ const Details = (props) => {
 
                             </td>
                             <td>
-                                {/* <Link to={`/home/delete/${member._id}`}>Delete</Link> | */}
                                 <button onClick={deleteHandler} className='btn btn-danger'>Delete</button>
                             </td>
                             </tr>
-                        // allMembers.map((member, index)=>(
-                        //     <tr key={index}>
-                        //         <td>{member.fullName}</td>
-                        //         <td>{member.churchName}</td>
-                        //         <td>{member.email}</td>
-                        //         <td>{member.membershipFee}</td>
-                        //         <td>
-                        //             {/* <Link to={`/home/delete/${member._id}`}>Delete</Link> | */}
-                        //             <button onClick={deleteHandler} className='btn btn-danger'>Delete</button>
-                        //         </td>
-                        //     </tr>
-                        // ))
                     }
                     </tbody> 
                 </table>

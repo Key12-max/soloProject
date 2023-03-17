@@ -5,7 +5,6 @@ import DisplayAllMember from './Components/DisplayAllMember';
 import AddNewMember from './Components/AddNewMember';
 import UpdateMemberInfo from './Components/UpdateMemberInfo';
 import Details from './Components/Details';
-import MemberStatus from './Components/MemberStatus';
 
 function App() {
   const [allMembers, setAllMembers] = useState([])
@@ -16,7 +15,6 @@ function App() {
         <Route path ='/home/addMember' element={<AddNewMember allMembers = {allMembers} setAllMembers = {setAllMembers}/>}/>
         <Route path='/home/edit/:id' element = {<UpdateMemberInfo/>}/>
         <Route path='/home/details/:id' element = {<Details/>}/>
-        <Route path='/status/month/:monthId' element = {<MemberStatus/>}/>
       </Routes>
     </div>
   );
