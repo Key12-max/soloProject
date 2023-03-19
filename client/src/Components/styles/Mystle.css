@@ -10,6 +10,12 @@
     margin: 20px;
     
 }
+.main{
+    height: autopx;
+    width: 1300px;
+    margin: auto;
+    margin-top: 20px;
+}
 .body {
     width: 60%;
     align-items: center;
@@ -68,33 +74,8 @@ td,th{
     text-align: left;
     background-color: #cccccc;
 }
-/* .table tr:hover {background-color: #ddd;}
-.table tr:nth-child(even){background-color: #f2f2f2;} */
 
-.button-pet {
-    background-color:#2a78e4;
-    border: 2px solid black;
-    box-shadow: 6px 6px black;
-    height: 35px;
-    text-align: center;
-    color: white;
-    cursor: pointer;
-    margin-top: 20px;
-    width: 150px;  
-}
-.btn-likes{
-    background-color:#009e0f;
-    border: 2px solid black;
-    box-shadow: 6px 6px black;
-    height: 35px;
-    text-align: center;
-    color: white;
-    cursor: pointer;
-    margin-top: 20px;
-    width: 170px;  
-    margin: 10px;
-    padding: 10px;
-}
+
 .green-paying-btn {
     background-color: green;
     color: white;

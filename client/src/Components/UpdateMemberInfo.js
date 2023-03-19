@@ -9,7 +9,8 @@ const UpdateMemberInfo = (props) => {
     const [member, setMember ] = useState({
         fullName:'',
         churchName:'',
-        email:''
+        email:'',
+        date: ''
     })
     useEffect(()=>{
         axios.get("http://127.0.0.1:8000/api/oneMember/"+id,member)
@@ -28,7 +29,7 @@ const UpdateMemberInfo = (props) => {
         axios.put("http://127.0.0.1:8000/api/home/edit/"+id, member)
         .then((res)=>{
             console.log(res)
-            navigate('/home')
+            navigate('/')
         })
         .catch((err)=>{
             console.log(err)
@@ -39,13 +40,12 @@ const UpdateMemberInfo = (props) => {
         <div className='content'>
             <div>
             <h1>Update {member.fullName} Info</h1>
-            <Link to = {'/home'}>Click to return to home page</Link>
+            <Link to = {'/'}>Click to return to home page</Link>
             </div>
             <div>
                 <form onSubmit={submitHandler} className= "col-4 bg-dark p-4 my-5 mx-auto text-light" >
                     <label>Full_Name: </label>
                     <input onChange={handleInputChange} type= "text" name = "fullName" value = {member.fullName} className = "form-control"/>
-
                     {
                         errors.fullName?
                         <p className='text-danger'>{errors.fullName.message}</p>:
@@ -60,22 +60,19 @@ const UpdateMemberInfo = (props) => {
                     }
                     <label>Email: </label>
                     <input onChange={handleInputChange} type= "text" name = "email" value = {member.email} className = "form-control"/>
-                    
                     {
                         errors.email?
                         <p className='text-danger'>{errors.email.message}</p>:
                         null
                     }
-                    {/* <label>Date: </label>
+                    <label>Date: </label>
                     <input onChange={handleInputChange} type= "date" name = "date"  />
-
                     {
                         errors.date?
                         <p className='text-danger'>{errors.date.message}</p>:
                         null
-                    } */}
+                    }
                     <button>Edit </button>
-
                 </form>
             </div>
         </div>

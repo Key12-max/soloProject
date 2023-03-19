@@ -23,7 +23,7 @@ const Details = (props) => {
         axios.delete("http://127.0.0.1:8000/api/delete/"+id)
         .then((res)=>{
             console.log("deleted")
-            navigate('/home')
+            navigate('/')
         })
         .catch((err)=>{
             console.log(err)
@@ -34,7 +34,7 @@ const Details = (props) => {
         <div className='content'>
             <div className='title'>
                 <h1>{member.fullName} Status</h1>
-                <Link to={'/home'}>Home</Link>
+                <Link to={'/'}>Home</Link>
             </div>
             <div className="table">
                 <table>
@@ -64,7 +64,6 @@ const Details = (props) => {
                                                     ? "red-not-paying-btn"
                                                     : ""
                                                 }`}>Not Paying</button>
-
                             </td>
                             <td>
                                 <button onClick={deleteHandler} className='btn btn-danger'>Delete</button>

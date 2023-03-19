@@ -11,7 +11,7 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path ='/home' element={<DisplayAllMember allMembers = {allMembers} setAllMembers = {setAllMembers}/>}/>
+        <Route path ='/' element={<DisplayAllMember allMembers = {allMembers} setAllMembers = {setAllMembers}/>}/>
         <Route path ='/home/addMember' element={<AddNewMember allMembers = {allMembers} setAllMembers = {setAllMembers}/>}/>
         <Route path='/home/edit/:id' element = {<UpdateMemberInfo/>}/>
         <Route path='/home/details/:id' element = {<Details/>}/>

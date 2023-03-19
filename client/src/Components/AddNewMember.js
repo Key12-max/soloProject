@@ -3,7 +3,6 @@ import './styles/Mystle.css';
 import axios from 'axios';
 import React, {useState} from 'react';
 import {Link,  useNavigate } from 'react-router-dom';
-
 const AddNewMember = (props) => {
     const navigate = useNavigate()
     const {allMembers, setAllMembers} = props;
@@ -12,13 +11,16 @@ const AddNewMember = (props) => {
         fullName: '',
         churchName: '',
         email: '',
-        //date:date()
-
+        date:''
 
     })
+
+
     const handleInputChange = (e)=>{
         e.preventDefault();
         setMember({...member,[e.target.name]:e.target.value})
+        
+
     }
     const submitHandler = (e)=>{
         e.preventDefault()
@@ -27,7 +29,8 @@ const AddNewMember = (props) => {
         .then((res)=>{
             setAllMembers([...allMembers], res.data)
             console.log(res.data)
-            navigate('/home')
+            navigate('/')
+            
         })
         .catch((err)=>{
             console.log(err)
@@ -38,15 +41,13 @@ const AddNewMember = (props) => {
         <div className='content'>
                 <div>
                     <h1>Registration Form</h1>
-                    <Link to = {'/home'}>Click here to return to the main page</Link>
+                    <Link to = {'/'}>Click here to return to the main page</Link>
                 </div>
             <div>
                 <form onSubmit={submitHandler} className = "col-4 bg-dark p-4 my-5 mx-auto text-light">
                     <div className='form-group'>
-
                         <label>Full_Name: </label>
                         <input onChange={handleInputChange} type= "text" name = "fullName" value = {member.fullName} className ='form-control'/>
-
                         {
                             errors.fullName?
                             <p className='text-danger'>{errors.fullName.message}</p>:
@@ -65,26 +66,22 @@ const AddNewMember = (props) => {
                         }
                     </div>
                     <div className='form-group'>
-
                         <label>Email: </label>
                         <input onChange={handleInputChange} type= "text" name = "email" value = {member.email} className ='form-control'/>
-                        
                         {
                             errors.email?
                             <p className='text-danger'>{errors.email.message}</p>:
                             null
                         }
                     </div>
-                    {/* <label>Date: </label>
+                    <label>Date: </label>
                     <input onChange={handleInputChange} type= "date" name = "date"  />
-
                     {
                         errors.date?
                         <p className='text-danger'>{errors.date.message}</p>:
                         null
-                    } */}
+                    }
                     <button>Add Member </button>
-
                 </form>
             </div>
         </div>
