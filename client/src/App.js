@@ -5,7 +5,7 @@ import DisplayAllMember from './Components/DisplayAllMember';
 import AddNewMember from './Components/AddNewMember';
 import UpdateMemberInfo from './Components/UpdateMemberInfo';
 import Details from './Components/Details';
-
+import Footer from './Components/Footer';
 function App() {
   const [allMembers, setAllMembers] = useState([])
   return (
@@ -16,6 +16,7 @@ function App() {
         <Route path='/home/edit/:id' element = {<UpdateMemberInfo/>}/>
         <Route path='/home/details/:id' element = {<Details/>}/>
       </Routes>
+      <Footer/>
     </div>
   );
 }

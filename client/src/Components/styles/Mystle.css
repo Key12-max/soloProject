@@ -84,3 +84,10 @@ td,th{
     background-color: red;
     color: white;
 }
+.footer {
+    background-color: #394e7e;
+}
+address {
+    text-align: center;
+    padding: 0.3em;
+}
