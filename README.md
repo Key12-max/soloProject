@@ -1,5 +1,5 @@
 # soloProject
-#This APP is build to manage church member including  trucking their monthly fee.
+#This APP is developed for monthly fee managment.
+#Implement functionality to track fees, mark them as paid and set reminders for due date using the React built-in method useEffect and useState.
 #It fully works CRUD functionality including validations.
-#Abled to edit, delete, update and add a member.
 #Still working on it to update the status on membership fee.If memeber did not pay the fee, it should display red else green.
