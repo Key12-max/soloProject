@@ -7,7 +7,6 @@ import axios from 'axios';
 const Details = (props) => {
     const navigate = useNavigate()
     const {id} = useParams()
-
     const[member, setMember] = useState({})
 
     useEffect(()=>{
