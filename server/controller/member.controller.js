@@ -1,7 +1,6 @@
 const Member = require('../models/member.models')
 
 module.exports = {
-
     addNewMember: (req, res) =>{
         console.log("new Member",req.body)
         Member.create(req.body)
@@ -29,7 +28,6 @@ module.exports = {
         .catch((error)=>{
             res.status(500).json(error)
         })
-
     },
     updateMemberInfo: (req, res)=>{
         Member.findOneAndUpdate({ _id: req.params.id},req.body, { new: true, runValidators: true})
