@@ -15,7 +15,6 @@ const AddNewMember = (props) => {
 
     })
 
-
     const handleInputChange = (e)=>{
         e.preventDefault();
         setMember({...member,[e.target.name]:e.target.value})
@@ -55,7 +54,6 @@ const AddNewMember = (props) => {
                         }
                     </div>
                     <div className='form-group'>
-
 
                         <label>Church_Name: </label>
                         <input onChange={handleInputChange} type= "text" name = "churchName" value = {member.churchName} className ='form-control'/>
