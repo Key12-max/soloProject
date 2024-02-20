@@ -80,6 +80,7 @@ const AddNewMember = (props) => {
                         null
                     }
                     <button>Add Member </button>
+                    <p>Already have an account? <a href='/login'>login</a></p>
                 </form>
             </div>
         </div>
