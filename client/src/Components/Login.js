@@ -33,7 +33,6 @@ const Login =()=>{
     }
     return (
         <section>
-        
             <p ref = {errRef} className = {errMsg ? "errmsg" : "offscreen" }aria-live = "assertive">{errMsg}</p>
             <h1>Sign In</h1>
             <form onSubmit={handleSubmit}>
@@ -57,7 +56,7 @@ const Login =()=>{
             </form>
             <p>Need an account?<bt/>
             <span className="line">
-                {/*Put a react router here */}
+                {/*Put a react router her */}
                 <a href="/home/addMember">Sign Up</a>
             </span>
             </p>

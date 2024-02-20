@@ -46,5 +46,14 @@ module.exports = {
         .catch((err)=>{
             res.status(500).json(err)
         })
+    },
+    getAMemberByEmail: (req, res)=>{
+        Member.findOne({email: req.params.email}, req.body)
+        .then(userName=>{
+            res.json(userName)
+        })
+        .catch((err)=>{
+            res.status(500).json(err)
+        })
     }
 }

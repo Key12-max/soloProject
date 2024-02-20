@@ -11,7 +11,8 @@ const AddNewMember = (props) => {
         fullName: '',
         churchName: '',
         email: '',
-        date:''
+        date:'',
+        password:''
 
     })
 
@@ -72,6 +73,15 @@ const AddNewMember = (props) => {
                             null
                         }
                     </div>
+                    <div className='form-group'>
+                        <label>Password: </label>
+                        <input onChange={handleInputChange} type= "password" name = "password" value = {member.password} id='password' className ='form-control'/>
+                        {
+                            errors.password?
+                            <p className='text-danger'>{errors.password.message}</p>:
+                            null
+                        }
+                    </div>
                     <label>Date: </label>
                     <input onChange={handleInputChange} type= "date" name = "date"  />
                     {
@@ -80,7 +90,7 @@ const AddNewMember = (props) => {
                         null
                     }
                     <button>Add Member </button>
-                    <p>Already have an account? <a href='/login'>login</a></p>
+                    <p>Already have an account? <a href='/home/login'>login</a></p>
                 </form>
             </div>
         </div>
