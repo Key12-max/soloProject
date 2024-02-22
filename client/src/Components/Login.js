@@ -2,7 +2,7 @@ import axios from "axios";
 import React,{useState, useRef, useEffect} from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-const Login =()=>{
+const Login = ()=>{
     const navigate = useNavigate()
     //this is referace to focus on the input and err if exists
     const useRef = useRef();
@@ -64,4 +64,4 @@ const Login =()=>{
     )
 
 }
-export default Login
+export default Login;
