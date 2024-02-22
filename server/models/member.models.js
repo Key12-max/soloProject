@@ -32,8 +32,12 @@ const MemberShema = mongoose.Schema(
         membershipFee: {
             type: String,
             enum: ["Paying", "Not Paying"]
+        },
+        password: {
+            type: String,
+            required:[true,"Enter your password"]
         }
-    },
-    
+        
+    }
 );
 module.exports = mongoose.model("Member", MemberShema);
