@@ -48,8 +48,8 @@ module.exports = {
         })
     },
     getAMemberByEmail: (req, res)=>{
-        Member.findOne({email: req.params.email}, req.body)
-        console.log(req.params.email)
+        Member.findOne({email: email}, req.body)
+        console.log(req.params)
         .then(userName=>{
             res.json(userName)
         })

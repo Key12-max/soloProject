@@ -90,7 +90,7 @@ const AddNewMember = (props) => {
                         null
                     }
                     <button>Add Member </button>
-                    <p>Already have an account? <a href='/home/login'>login</a></p>
+                    <p>Already have an account? <Link to = {'/home/login'}>Click he</Link></p>
                 </form>
             </div>
         </div>
