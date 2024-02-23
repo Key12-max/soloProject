@@ -1,7 +1,7 @@
 import axios from "axios";
 import React,{useState, useRef, useEffect} from "react";
 import { Link, useNavigate } from "react-router-dom";
-
+import './styles/Mystle.css'
 const Login = (props)=>{
 
     const navigate = useNavigate()
@@ -21,14 +21,13 @@ const Login = (props)=>{
     useEffect(()=>{
         setErrMsg('')
     },[])
-
     const handleSubmit = (e)=>{
         e.preventDefault()
         axios.post("http://127.0.0.1:8000/api/home/login",login)
         .then((res)=>{
             //setPwd('')
             //setEmail('')
-            setLogin('')
+            //setLogin('')
             navigate('/')
         })
         .catch((err)=>{
@@ -37,37 +36,51 @@ const Login = (props)=>{
         })
         
     }
+    const handleInputChange = (e)=>{
+        e.preventDefault();
+        setLogin({[e.target.name]:e.target.value})
+    }
     return (
-        <section>
-            <p  className = {errMsg ? "errmsg" : "offscreen" }aria-live = "assertive">{errMsg}</p>
+        <section className="content">
+            {/*<p  className = {errMsg ? "errmsg" : "offscreen" }aria-live = "assertive">{errMsg}</p> */}
             <h1>Sign In</h1>
-            <form onSubmit={handleSubmit}>
-                <label htmlFor="email">Email:</label>
-                <input type="email" 
-                id="email"
-                //ref={useRef}
-                autoComplete="off"
-                onChange={(e)=>setLogin(e.target.value)}
-                //value={email}
-                //required
-                />
-                <label htmlFor="password">Password:</label>
-                <input type="password" 
-                id="password"
-                onChange={(e)=>setLogin(e.target.value)}
-                //value={password}
-                //required
-                />
+            <form onSubmit={handleSubmit} className = "col-4 bg-dark p-4 my-5 mx-auto text-light">
+                <div className="form-group">
+                    <label htmlFor="email">Email:</label>
+                    <input type="email" 
+                    id="email"
+                    autoComplete="off"
+                    name="email"
+                    value={login.email}
+                    onChange={handleInputChange}
+                    />
+                    {
+                        errMsg.email?
+                        <p className="text-danger">{errMsg.email.message}</p>:
+                        null
+                    }
+                </div>
+                <div className="form-group">
+                    <label htmlFor="password">Password:</label>
+                    <input type="password" 
+                    id="password"
+                    onChange={handleInputChange}
+                    />
+                    {
+                        errMsg.password?
+                        <p className="text-danger">{errMsg.password.message}</p>:
+                        null
+                    }
+                </div>
                 <button>Sign In</button>
+                <p>Need an account?<bt/>
+                <span className="line">
+                    {/*Put a react router her */}
+                    <a href="/home/addMember">Sign Up</a>
+                </span>
+                </p>
             </form>
-            <p>Need an account?<bt/>
-            <span className="line">
-                {/*Put a react router her */}
-                <a href="/home/addMember">Sign Up</a>
-            </span>
-            </p>
         </section>
     )
-
 }
 export default Login;

@@ -13,7 +13,6 @@ const AddNewMember = (props) => {
         email: '',
         date:'',
         password:''
-
     })
 
     const handleInputChange = (e)=>{
