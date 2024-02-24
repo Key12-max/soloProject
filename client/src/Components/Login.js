@@ -5,13 +5,7 @@ import './styles/Mystle.css'
 const Login = (props)=>{
 
     const navigate = useNavigate()
-    //this is referace to focus on the input and err if exists
-    //const useRef = useRef();
-    //const errRef = useRef();
-    //monitor username, password, and error if exists
-    //const[email, setEmail] = useState('');
-    //const[pwd, setPwd] = useState('');
-    const[errMsg, setErrMsg] = useState('');
+    const[errors, setErrors] = useState('');
     const [login, setLogin] = useState({
         email:'',
         password: ''
@@ -19,7 +13,7 @@ const Login = (props)=>{
 
     // use useEffect hook to clear errMessage when the user is changing or typing thier name or password
     useEffect(()=>{
-        setErrMsg('')
+        setErrors('')
     },[])
     const handleSubmit = (e)=>{
         e.preventDefault()
@@ -32,7 +26,7 @@ const Login = (props)=>{
         })
         .catch((err)=>{
             console.log(err)
-            setErrMsg(err.response.data.errors)
+            setErrors(err.response.data.errors)
         })
         
     }
@@ -45,33 +39,24 @@ const Login = (props)=>{
             {/*<p  className = {errMsg ? "errmsg" : "offscreen" }aria-live = "assertive">{errMsg}</p> */}
             <h1>Sign In</h1>
             <form onSubmit={handleSubmit} className = "col-4 bg-dark p-4 my-5 mx-auto text-light">
-                <div className="form-group">
-                    <label htmlFor="email">Email:</label>
-                    <input type="email" 
-                    id="email"
-                    autoComplete="off"
-                    name="email"
-                    value={login.email}
-                    onChange={handleInputChange}
-                    />
-                    {
-                        errMsg.email?
-                        <p className="text-danger">{errMsg.email.message}</p>:
-                        null
-                    }
-                </div>
-                <div className="form-group">
-                    <label htmlFor="password">Password:</label>
-                    <input type="password" 
-                    id="password"
-                    onChange={handleInputChange}
-                    />
-                    {
-                        errMsg.password?
-                        <p className="text-danger">{errMsg.password.message}</p>:
-                        null
-                    }
-                </div>
+            <div className='form-group'>
+                <label>Email: </label>
+                <input onChange={handleInputChange} type= "text" name = "email" value = {login.email} className ='form-control'/>
+                {
+                    errors.email?
+                    <p className='text-danger'>{errors.email.message}</p>:
+                    null
+                }
+            </div>
+            <div className='form-group'>
+                <label>Password: </label>
+                <input onChange={handleInputChange} type= "password" name = "password" value = {login.password} id='password' className ='form-control'/>
+                {
+                    errors.password?
+                    <p className='text-danger'>{errors.password.message}</p>:
+                    null
+                }
+            </div>
                 <button>Sign In</button>
                 <p>Need an account?<bt/>
                 <span className="line">

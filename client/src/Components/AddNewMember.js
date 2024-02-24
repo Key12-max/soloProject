@@ -54,7 +54,6 @@ const AddNewMember = (props) => {
                         }
                     </div>
                     <div className='form-group'>
-
                         <label>Church_Name: </label>
                         <input onChange={handleInputChange} type= "text" name = "churchName" value = {member.churchName} className ='form-control'/>
                         {
@@ -89,7 +88,7 @@ const AddNewMember = (props) => {
                         null
                     }
                     <button>Add Member </button>
-                    <p>Already have an account? <Link to = {'/home/login'}>Click he</Link></p>
+                    <p>Already have an account? <Link to = {'/home/login'}>Click here</Link></p>
                 </form>
             </div>
         </div>
