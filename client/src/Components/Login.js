@@ -1,8 +1,8 @@
 import axios from "axios";
-import React,{useState, useRef, useEffect} from "react";
-import { Link, useNavigate } from "react-router-dom";
+import React,{useState} from "react";
+import {  useNavigate } from "react-router-dom";
 import './styles/Mystle.css'
-const Login = (props)=>{
+const Login = ()=>{
 
     const navigate = useNavigate()
     const[errors, setErrors] = useState('');
@@ -12,16 +12,15 @@ const Login = (props)=>{
     })
 
     // use useEffect hook to clear errMessage when the user is changing or typing thier name or password
-    useEffect(()=>{
-        setErrors('')
-    },[])
+
     const handleSubmit = (e)=>{
         e.preventDefault()
         axios.post("http://127.0.0.1:8000/api/home/login",login)
         .then((res)=>{
-            //setPwd('')
-            //setEmail('')
-            //setLogin('')
+            console.log(res)
+            if(res.data === "Success"){
+                navigate('/')
+            }
             navigate('/')
         })
         .catch((err)=>{
@@ -58,7 +57,7 @@ const Login = (props)=>{
                 }
             </div>
                 <button>Sign In</button>
-                <p>Need an account?<bt/>
+                <p>Need an account?
                 <span className="line">
                     {/*Put a react router her */}
                     <a href="/home/addMember">Sign Up</a>
