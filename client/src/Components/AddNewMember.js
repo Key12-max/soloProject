@@ -35,10 +35,10 @@ const AddNewMember = (props) => {
     }
     return (
         <div className='content'>
-                <div>
-                    <h1>Registration Form</h1>
-                    <Link to = {'/'}>Click here to return to the main page</Link>
-                </div>
+            <div>
+                <h1>Registration Form</h1>
+                <Link to = {'/'}>Click here to return to the main page</Link>
+            </div>
             <div>
                 <form onSubmit={submitHandler} className = "col-4 bg-dark p-4 my-5 mx-auto text-light">
                     <div className='form-group'>
@@ -85,7 +85,7 @@ const AddNewMember = (props) => {
                         null
                     }
                     <button>Add Member </button>
-                    <p>Already have an account? <Link to = {'/home/login'}>Click here</Link></p>
+                    <p>Already have an account? <Link to = {'/login'}>Click here</Link></p>
                 </form>
                 
             </div>

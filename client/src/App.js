@@ -7,6 +7,7 @@ import UpdateMemberInfo from './Components/UpdateMemberInfo';
 import Details from './Components/Details';
 import Footer from './Components/Footer';
 import Login from './Components/login';
+import LoginAMember from './Components/Test';
 function App() {
   const [allMembers, setAllMembers] = useState([])
   return (
@@ -17,7 +18,7 @@ function App() {
         <Route path='/home/edit/:id' element = {<UpdateMemberInfo/>}/>
         <Route path='/home/details/:id' element = {<Details/>}/>
         <Route path ='/home/login' element={<Login/>}/>
-
+        <Route path='/login' element = {<LoginAMember/>}/>
       </Routes>
       <Footer/>
     
