@@ -14,12 +14,9 @@ const AddNewMember = (props) => {
         date:'',
         password:''
     })
-
     const handleInputChange = (e)=>{
         e.preventDefault();
         setMember({...member,[e.target.name]:e.target.value})
-        
-
     }
     const submitHandler = (e)=>{
         e.preventDefault()
@@ -63,8 +60,8 @@ const AddNewMember = (props) => {
                         }
                     </div>
                     <div className='form-group'>
-                        <label>Email: </label>
-                        <input onChange={handleInputChange} type= "text" name = "email" value = {member.email} className ='form-control'/>
+                        <label htmlFor = "email">Email: </label>
+                        <input onChange={handleInputChange} type= "email" name = "email" value = {member.email} className ='form-control'/>
                         {
                             errors.email?
                             <p className='text-danger'>{errors.email.message}</p>:
@@ -90,8 +87,10 @@ const AddNewMember = (props) => {
                     <button>Add Member </button>
                     <p>Already have an account? <Link to = {'/home/login'}>Click here</Link></p>
                 </form>
+                
             </div>
         </div>
+        
     );
 }
 

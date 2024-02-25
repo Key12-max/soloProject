@@ -48,19 +48,12 @@ module.exports = {
         })
     },
     getAMemberByEmail: (req, res)=>{
-        const{email,password} = req.body;
+        const {email,password} = req.body;
         console.log(req.body)
         Member.findOne({email: email})
-        .then(userName=>{
-            if(userName){
-                if(userName.password == password){
-                    res.json("Success")
-                } else{
-                    res.json("The password is incorrect")
-                }
-            } else{
-                res.json("No record is existed")
-            }
+        
+        .then(user=>{
+            res.json(user)
         })
         .catch((err)=>{
             res.status(500).json(err)

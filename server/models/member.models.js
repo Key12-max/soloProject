@@ -27,7 +27,6 @@ const MemberShema = mongoose.Schema(
             required:[true,"Please enter your email"],
             validate:[validateEmail, "Please enter a valid email"],
             unique: true
-
         },
         membershipFee: {
             type: String,
