@@ -1,5 +1,7 @@
 # soloProject
 This APP is developing to manage church membership.
-Implement functionality to track fees, mark them as paid and set reminders for due date using the React built-in method useEffect and useState.
-It fully works CRUD functionality including validations so far.
+Implemented functionality to track monthly membership fees, and set reminders for due date using the React library.
+Access full service of the Church.
+It fully works CRUD functionality including validations.
+Customer abled to register and login to check their status.
 Still working on it.
